@@ -40,7 +40,7 @@ function textEmotion(textParam,res) {
     
     nluInstance.analyze(analyzeParams)
         .then(analysisResults => {
-            res.send(analysisResults);
+            res.send(JSON.stringify(analysisResults.result.emotion.document.emotion));
          })
         .catch(err => {
             console.log(err.toString());
@@ -61,7 +61,7 @@ function textSentiment(textParam,res) {
     
     nluInstance.analyze(analyzeParams)
         .then(analysisResults => {
-            res.send(analysisResults);
+            res.send(JSON.stringify(analysisResults.result.sentiment.document.label));
          })
         .catch(err => {
             console.log(err.toString());
@@ -81,7 +81,7 @@ function urlEmotion(urlParam,res) {
     
     nluInstance.analyze(analyzeParams)
         .then(analysisResults => {
-            res.send(analysisResults);
+            res.send(JSON.stringify(analysisResults.result.emotion.document.emotion));
          })
         .catch(err => {
             console.log(err.toString());
@@ -102,7 +102,7 @@ function urlSentiment(urlParam,res) {
     
     nluInstance.analyze(analyzeParams)
         .then(analysisResults => {
-            res.send(analysisResults);
+            res.send(JSON.stringify(analysisResults.result.sentiment.document.label));
          })
         .catch(err => {
             console.log(err.toString());
